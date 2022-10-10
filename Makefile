@@ -22,4 +22,4 @@ test-ascii.o: test-ascii.cpp
 	g++ $(CIXXFLAGS) test-ascii.cpp
 
 clean:
-	rm -f main.o funcs.o tests.o doctest.h.gch funcs.h.gch
+	rm -f main.o funcs.o tests.o test-ascii.o doctest.h.gch funcs.h.gch
