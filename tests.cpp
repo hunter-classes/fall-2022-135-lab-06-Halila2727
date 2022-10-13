@@ -2,6 +2,7 @@
 #include "doctest.h"
 #include "caesar.h"
 #include "vigenere.h"
+#include "decrypt.h"
 
 // add your tests here
 TEST_CASE("Shift Character")
@@ -26,4 +27,20 @@ TEST_CASE("Encypt Vigenere")
     CHECK(encryptVigenere("Candles can't break bones!", "") == "Candles can't break bones!");
     CHECK(encryptVigenere("Candles can't break bones!", "jbawebfpbq") == "Lbnzpfx rbd'c crael gdoub!");
     CHECK(encryptVigenere("Candles can't break bones!", "tre mENd") == "Vrrdxif fte'x bdinn ufree!");
+}
+
+TEST_CASE("Decypt Caesar")
+{
+	CHECK(decryptCaesar("L'p d QBJ dqg QBB idq!", 3) == "I'm a NYG and NYY fan!");
+    CHECK(decryptCaesar("E'i w JUC wjz JUU bwj!", 126) == "I'm a NYG and NYY fan!");
+    CHECK(decryptCaesar("H'l z MXF zmc MXX ezm!", -1) == "I'm a NYG and NYY fan!");
+    CHECK(decryptCaesar("I'm a NYG and NYY fan!", 0) == "I'm a NYG and NYY fan!");
+}
+
+TEST_CASE("Decypt Vigenere")
+{
+	CHECK(decryptVigenere("Eaxhnec gcn'd fteko doxiu!", "cake") == "Candles can't break bones!");
+    CHECK(decryptVigenere("Candles can't break bones!", "") == "Candles can't break bones!");
+    CHECK(decryptVigenere("Lbnzpfx rbd'c crael gdoub!", "jbawebfpbq") == "Candles can't break bones!");
+    CHECK(decryptVigenere("Vrrdxif fte'x bdinn ufree!", "tre mENd") == "Candles can't break bones!");
 }
