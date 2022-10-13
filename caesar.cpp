@@ -12,6 +12,14 @@
 // A helper function to shift one character by rshift
 char shiftChar(char c, int rshift)
 {
+    if(rshift < 0)
+    {
+        while(rshift < 0)
+        {
+            rshift += 26;
+        }
+    }
+
     int place = int(c);
     
     for(int i=0; i < rshift; i++)
@@ -34,6 +42,14 @@ char shiftChar(char c, int rshift)
 // Caesar cipher encryption
 std::string encryptCaesar(std::string plaintext, int rshift)
 {
+    if(rshift < 0)
+    {
+        while(rshift < 0)
+        {
+            rshift += 26;
+        }
+    }
+
     std::string s = "";
     for(int i=0; i<plaintext.length(); i++)
     {
