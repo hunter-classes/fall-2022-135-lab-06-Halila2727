@@ -25,4 +25,4 @@ caesar.o: caesar.cpp caesar.h
 	g++ $(CIXXFLAGS) -c caesar.cpp caesar.h
 
 clean:
-	rm -f main.o funcs.o tests.o test-ascii.o doctest.h.gch funcs.h.gch
+	rm -f main.o funcs.o tests.o test-ascii.o caesar.o doctest.h.gch funcs.h.gch caesar.h.gch
