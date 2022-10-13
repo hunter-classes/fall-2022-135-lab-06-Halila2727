@@ -8,6 +8,7 @@
 #include <iostream>
 #include "caesar.h"
 #include "vigenere.h"
+#include "decrypt.h"
 
 int main()
 {
@@ -17,6 +18,14 @@ int main()
 
   std::cout << "\nencryptVigenere() function:\nplaintext: Hello, World! keyword: cake\n";
   std::cout << encryptVigenere("Hello, World!", "cake");
+  std::cout << "\n------------------\n";
+
+  std::cout << "\ndecryptCaesar() function:\nciphertext: Rovvy, Gybvn! Shift: 10\n";
+  std::cout << decryptCaesar("Rovvy, Gybvn!", 10);
+  std::cout << "\n------------------\n";
+
+  std::cout << "\ndecryptVigenere() function:\nciphertext: Jevpq, Wyvnd! keyword: cake\n";
+  std::cout << decryptVigenere("Jevpq, Wyvnd!", "cake");
   std::cout << "\n------------------\n";
   return 0;
 }
